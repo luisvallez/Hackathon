@@ -1,0 +1,550 @@
+/* General Body Styles */
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa; /* bg-gray-100 */
+  color: #4a5568; /* text-gray-700 */
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem; /* px-6 equivalent (0.75rem * 2 for both sides) */
+  padding-right: 1rem;
+}
+
+/* Header & Navigation */
+#header {
+  background-color: #ffffff; /* bg-white */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* shadow-md */
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 1rem 0; /* py-4 */
+}
+
+#header nav.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: bold;
+  color: #5a67d8; /* text-indigo-600 */
+  text-decoration: none;
+}
+
+.nav-links a {
+  color: #4a5568; /* text-gray-600 */
+  text-decoration: none;
+  margin-left: 1rem; /* space-x-4 */
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #5a67d8; /* hover:text-indigo-600 */
+}
+
+.btn {
+  padding: 0.75rem 1.5rem; /* px-6 py-3 */
+  border-radius: 0.5rem; /* rounded-lg */
+  font-weight: 600; /* font-semibold */
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-nav {
+  background-color: #5a67d8; /* bg-indigo-600 */
+  color: #ffffff !important;
+}
+
+.btn-nav:hover {
+  background-color: #4c51bf; /* hover:bg-indigo-700 */
+}
+
+/* Mobile Menu */
+.mobile-menu-button {
+  display: none; /* Hidden on larger screens */
+  background: none;
+  border: none;
+  color: #4a5568; /* text-gray-700 */
+  cursor: pointer;
+}
+.mobile-menu-button svg {
+  width: 1.5rem; /* w-6 */
+  height: 1.5rem; /* h-6 */
+}
+
+.mobile-menu {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 100%; /* Position below the header */
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0; /* border-gray-200 */
+}
+.mobile-menu.hidden {
+  display: none;
+}
+.mobile-nav-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #4a5568;
+  text-decoration: none;
+  border-radius: 0.375rem; /* rounded-md */
+}
+.mobile-nav-link:hover {
+  background-color: #f0f4ff; /* A light indigo for hover */
+  color: #5a67d8;
+}
+.mobile-nav-link-btn {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+/* Team Members Section - Updated for Horizontal Scroll */
+.team-members-scroll-container {
+  overflow: hidden;
+  width: 100%;
+  /* Optional: for fading edges to make the infinite scroll look smoother */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  padding-block: 1rem; /* Add some vertical padding to the container */
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: nowrap;
+  /* The animation will move this element.
+     The width of .team-members should be the total width of all cards (original + duplicates).
+     This is often set by the content itself (max-content) or JavaScript.
+     For pure CSS, ensure the HTML structure has duplicated items. */
+  animation: scrollHorizontal 40s linear infinite;
+}
+
+/* Pause animation on hover */
+.team-members:hover {
+  animation-play-state: paused;
+}
+
+/* Keyframes for horizontal scrolling */
+@keyframes scrollHorizontal {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    /* This assumes .team-members contains two identical sets of cards.
+       It scrolls one full set of cards. */
+    transform: translateX(-50%);
+  }
+}
+
+.team-member-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex-shrink: 0; /* Prevent cards from shrinking */
+  width: 280px; /* Adjust as needed, or use min-width. Ensures consistency. */
+  margin-right: 1.5rem; /* Spacing between cards */
+}
+
+.team-member-img {
+  width: 100px; /* Ajusta según sea necesario */
+  height: 100px; /* Ajusta según sea necesario */
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  object-fit: cover;
+}
+
+.team-member-card h4 {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #2d3748; /* text-gray-800 */
+}
+
+.team-member-card p {
+  font-size: 0.875rem; /* text-sm */
+  color: #718096; /* text-gray-600 */
+}
+
+/* Responsive adjustments for .team-members (horizontal scroll) can be added here if needed,
+   e.g., changing animation speed or card sizes on different screens.
+   For now, the grid-based responsive styles are removed. */
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(
+    to right,
+    #667eea,
+    #764ba2
+  ); /* hero-bg from original HTML */
+  color: #ffffff;
+  padding: 5rem 0; /* py-20 */
+}
+
+.hero-section h1 {
+  font-size: 2.5rem; /* text-4xl */
+  font-weight: bold;
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.hero-subtitle {
+  font-size: 1.125rem; /* text-lg */
+  margin-bottom: 2rem; /* mb-8 */
+  max-width: 48rem; /* max-w-3xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-secondary {
+  background-color: #ed64a6; /* bg-pink-500 */
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background-color: #d53f8c; /* hover:bg-pink-600 */
+}
+
+.btn-large {
+  font-size: 1.125rem; /* text-lg */
+}
+
+/* General Section Styling */
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.section-title {
+  font-size: 2rem; /* text-3xl */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem; /* mb-8 */
+  color: #2d3748; /* text-gray-800 */
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.125rem; /* text-lg */
+  margin-bottom: 3rem; /* mb-12 */
+  max-width: 48rem; /* max-w-3xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(
+    to right,
+    #5a67d8,
+    #ed64a6
+  ); /* from-indigo-500 to-pink-500 */
+}
+
+/* Grid Layouts */
+.grid-3 {
+  display: grid;
+  gap: 2rem; /* gap-8 */
+}
+
+.grid-4 {
+  display: grid;
+  gap: 2rem; /* gap-8 */
+}
+
+@media (min-width: 768px) {
+  /* md breakpoint */
+  .grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  /* lg breakpoint */
+  .grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Cards (Benefit, Module, App) */
+.benefit-card,
+.module-card,
+.app-card {
+  background-color: #ffffff; /* bg-white */
+  padding: 1.5rem; /* p-6 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+  transition: box-shadow 0.3s ease;
+  text-align: center;
+}
+.module-card {
+  background-color: #f8f9fa; /* bg-gray-50 */
+}
+.app-card {
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+}
+
+.benefit-card:hover,
+.module-card:hover,
+.app-card:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* hover:shadow-lg or hover:shadow-xl */
+}
+
+.icon-placeholder {
+  width: 3rem; /* w-12 */
+  height: 3rem; /* h-12 */
+  background-color: #e0e7ff; /* bg-indigo-100 */
+  color: #5a67d8; /* text-indigo-600 */
+  border-radius: 9999px; /* rounded-full */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem; /* mb-4 */
+  margin-left: auto;
+  margin-right: auto;
+}
+.icon-placeholder svg {
+  width: 1.5rem; /* w-6 */
+  height: 1.5rem; /* h-6 */
+}
+
+.benefit-card h3,
+.module-card h3 {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 0.5rem; /* mb-2 or mb-3 */
+  color: #2d3748; /* text-gray-800 */
+}
+.module-card h3 {
+  color: #4c51bf; /* text-indigo-700 */
+}
+
+.app-card h4 {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 0.5rem; /* mb-2 */
+  color: #4c51bf; /* text-indigo-700 */
+}
+
+.benefit-card p,
+.module-card p,
+.app-card p {
+  font-size: 0.875rem; /* text-sm */
+  color: #4a5568; /* text-gray-700 */
+}
+
+/* Objectives Section */
+.bg-light-indigo {
+  background-color: #f0f4ff; /* bg-indigo-50, a lighter shade */
+}
+.max-w-prose {
+  max-width: 65ch; /* Tailwind's max-w-prose */
+  margin-left: auto;
+  margin-right: auto;
+}
+.list-disc {
+  list-style-type: disc;
+  padding-left: 1.5rem; /* list-inside and space-y-3 */
+}
+.list-disc li {
+  margin-bottom: 0.75rem; /* space-y-3 */
+  font-size: 1.125rem; /* text-lg */
+}
+
+/* AI Applications Section */
+.bg-gray-200 {
+  background-color: #e2e8f0;
+}
+
+/* Ethics Section */
+.ethics-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem; /* gap-8 */
+}
+.ethics-image img {
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-xl */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-width: 600px; /* Limit image width */
+}
+.ethics-text .text-lg {
+  font-size: 1.125rem; /* text-lg */
+  margin-bottom: 1rem; /* mb-4 */
+}
+.ethics-text ul {
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+.ethics-text ul li {
+  margin-bottom: 0.5rem; /* space-y-2 */
+}
+
+@media (min-width: 768px) {
+  /* md breakpoint */
+  .ethics-content {
+    flex-direction: row;
+  }
+  .ethics-image {
+    width: 50%; /* md:w-1/2 */
+  }
+  .ethics-text {
+    width: 50%; /* md:w-1/2 */
+  }
+}
+
+/* Quienes Somos Section */
+.bg-light-gray {
+  background-color: #f7fafc; /* Corresponde a Tailwind gray-100 */
+}
+
+/* The .team-members styles are now handled by the updated general definition
+   for horizontal scrolling. Specific styles for this section's .team-members
+   are removed to avoid conflict and duplication. */
+
+.team-member-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.team-member-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.team-member-card h4 {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 0.5rem; /* mb-2 */
+  color: #2d3748; /* gray-800 */
+}
+
+.team-member-card p {
+  font-size: 0.875rem; /* text-sm */
+  color: #718096; /* gray-600 */
+}
+
+/* Call to Action Section */
+.bg-indigo-700 {
+  background-color: #4c51bf;
+}
+.text-white {
+  color: #ffffff;
+}
+.cta-title {
+  font-size: 2rem; /* text-3xl */
+  font-weight: bold;
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+.cta-subtitle {
+  font-size: 1.125rem; /* text-lg */
+  margin-bottom: 2rem; /* mb-8 */
+  max-width: 42rem; /* max-w-2xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn-cta {
+  background-color: #ffffff;
+  color: #4c51bf; /* text-indigo-700 */
+  font-size: 1.125rem; /* text-lg */
+}
+.btn-cta:hover {
+  background-color: #edf2f7; /* hover:bg-gray-100 */
+}
+.hackaton-team {
+  margin-top: 1rem; /* mt-4 */
+  font-size: 0.875rem; /* text-sm */
+}
+
+/* Footer */
+#footer {
+  background-color: #2d3748; /* bg-gray-800 */
+  color: #a0aec0; /* text-gray-300 */
+  padding: 2rem 0; /* py-8 */
+}
+.footer-tagline {
+  font-size: 0.875rem; /* text-sm */
+  margin-top: 0.5rem; /* mt-2 */
+}
+
+/* Text Alignment */
+.text-center {
+  text-align: center;
+}
+
+/* Responsive Adjustments for Navigation */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide desktop links */
+  }
+  .mobile-menu-button {
+    display: block; /* Show hamburger icon */
+  }
+  .hero-section h1 {
+    font-size: 2rem; /* md:text-6xl -> smaller on mobile */
+  }
+  .hero-subtitle {
+    font-size: 1rem; /* md:text-xl */
+  }
+  .section-title {
+    font-size: 1.75rem; /* md:text-4xl */
+  }
+  .cta-title {
+    font-size: 1.75rem; /* md:text-4xl */
+  }
+  .cta-subtitle {
+    font-size: 1rem; /* md:text-xl */
+  }
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr; /* Stack cards on mobile */
+  }
+}
