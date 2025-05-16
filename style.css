@@ -15,7 +15,14 @@ body {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.pdf-link {
+  color: white;
+  font-weight: bold;
+}
 
+.pdf-link:active {
+  color: #2bb9e6;
+}
 #header {
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
