@@ -37,7 +37,7 @@ body {
 .logo {
   font-size: 1.5rem; /* text-2xl */
   font-weight: bold;
-  color: #5a67d8; /* text-indigo-600 */
+  color: #0a406c; /* text-indigo-600 */
   text-decoration: none;
 }
 
@@ -49,7 +49,7 @@ body {
 }
 
 .nav-links a:hover {
-  color: #5a67d8; /* hover:text-indigo-600 */
+  color: #0a406c; /* hover:text-indigo-600 */
 }
 
 .btn {
@@ -63,12 +63,12 @@ body {
 }
 
 .btn-nav {
-  background-color: #5a67d8; /* bg-indigo-600 */
+  background-color: #0a406c; /* bg-indigo-600 */
   color: #ffffff !important;
 }
 
 .btn-nav:hover {
-  background-color: #4c51bf; /* hover:bg-indigo-700 */
+  background-color: #2bb9e6; /* hover:bg-indigo-700 */
 }
 
 /* Mobile Menu */
@@ -106,7 +106,7 @@ body {
 }
 .mobile-nav-link:hover {
   background-color: #f0f4ff; /* A light indigo for hover */
-  color: #5a67d8;
+  color: #0a406c;
 }
 .mobile-nav-link-btn {
   margin-top: 0.5rem;
@@ -138,7 +138,9 @@ body {
 .team-members {
   display: flex;
   flex-wrap: nowrap;
-  width: calc(22 * (280px + 1.5rem)); /* 22 cards * (280px width + 1.5rem margin-right) */
+  width: calc(
+    22 * (280px + 1.5rem)
+  ); /* 22 cards * (280px width + 1.5rem margin-right) */
   /* The animation will move this element.
      The width of .team-members should be the total width of all cards (original + duplicates).
      This is often set by the content itself (max-content) or JavaScript.
@@ -151,6 +153,107 @@ body {
   animation-play-state: paused;
 }
 
+/* Hero Section Styles */
+.hero-section {
+  background: linear-gradient(to right, #0a406c, #1a73e8);
+  color: #ffffff;
+  padding: 4rem 0;
+  overflow: hidden; /* Ensure image doesn't overflow */
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+.hero-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-image img {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15);
+}
+
+/* --- RESPONSIVE HERO --- */
+@media (max-width: 900px) {
+  .hero-section {
+    padding: 3rem 0;
+  }
+  .hero-container {
+    gap: 1rem;
+  }
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 700px) {
+  .hero-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+    text-align: center;
+  }
+  .hero-text {
+    order: 2;
+    padding: 0;
+  }
+  .hero-image {
+    order: 1;
+    margin-bottom: 0.5rem;
+  }
+  .hero-image img {
+    max-width: 90vw;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 1.25rem;
+  }
+  .hero-section h1 {
+    font-size: 1.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .btn-large {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+.hero-text h1 {
+  font-size: 2.5rem; /* text-4xl */
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem; /* text-lg */
+  margin-bottom: 2rem;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem; /* Optional: add some rounded corners */
+}
+
 /* Keyframes for horizontal scrolling */
 @keyframes scrollHorizontal {
   0% {
@@ -159,7 +262,9 @@ body {
   100% {
     /* This assumes .team-members contains two identical sets of cards.
        It scrolls one full set of cards. */
-    transform: translateX(calc(-11 * (280px + 1.5rem))); /* 11 cards * (280px width + 1.5rem margin-right) */
+    transform: translateX(
+      calc(-11 * (280px + 1.5rem))
+    ); /* 11 cards * (280px width + 1.5rem margin-right) */
   }
 }
 
@@ -175,12 +280,44 @@ body {
   margin-right: 1.5rem; /* Restored original rem value for spacing */
 }
 
+.team-member-card {
+  background-color: #ffffff;
+  box-sizing: border-box; /* Ensure padding is included in width */
+  padding: 1.5rem; /* Restored original rem value */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex-shrink: 0; /* Prevent cards from shrinking */
+  width: 280px; /* Adjust as needed, or use min-width. Ensures consistency. */
+  margin-right: 1.5rem; /* Restored original rem value for spacing */
+  position: relative; /* Needed for absolute positioning of ::after */
+  overflow: hidden; /* Hide the overflowing blur effect */
+}
+
 .team-member-img {
   width: 100px; /* Ajusta según sea necesario */
   height: 100px; /* Ajusta según sea necesario */
   border-radius: 50%;
   margin: 0 auto 1rem;
   object-fit: cover;
+  position: relative; /* Needed for z-index */
+  z-index: 1; /* Ensure image is above the pseudo-element */
+}
+
+.team-member-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit; /* Inherit the image */
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px); /* Apply blur effect */
+  z-index: 0; /* Position below the image */
+  border-radius: 50%; /* Match the image border-radius */
+  transform: scale(1.1); /* Slightly larger to cover edges */
 }
 
 .team-member-card h4 {
@@ -203,8 +340,8 @@ body {
 .hero-section {
   background: linear-gradient(
     to right,
-    #667eea,
-    #764ba2
+    #2bb9e6,
+    #0a406c
   ); /* hero-bg from original HTML */
   color: #ffffff;
   padding: 5rem 0; /* py-20 */
@@ -225,7 +362,7 @@ body {
 }
 
 .btn-secondary {
-  background-color: #ed64a6; /* bg-pink-500 */
+  background-color: #2bb9e6; /* bg-pink-500 */
   color: #ffffff;
 }
 
@@ -270,9 +407,24 @@ body {
   color: transparent;
   background-image: linear-gradient(
     to right,
-    #5a67d8,
-    #ed64a6
+    #0a406c,
+    #2bb9e6
   ); /* from-indigo-500 to-pink-500 */
+}
+
+/* AI Apps Section Styling */
+#ai-apps {
+  background: linear-gradient(to right, #2bb9e6, #0a406c);
+  color: #ffffff; /* Default text color for the section */
+}
+
+#ai-apps .section-title,
+#ai-apps .section-subtitle {
+  color: #ffffff;
+}
+
+#ai-apps .content-placeholder p {
+  color: #f0f4ff; /* A very light, almost white color for better readability */
 }
 
 /* Grid Layouts */
@@ -333,7 +485,7 @@ body {
   width: 3rem; /* w-12 */
   height: 3rem; /* h-12 */
   background-color: #e0e7ff; /* bg-indigo-100 */
-  color: #5a67d8; /* text-indigo-600 */
+  color: #0a406c; /* text-indigo-600 */
   border-radius: 9999px; /* rounded-full */
   display: flex;
   align-items: center;
@@ -355,7 +507,7 @@ body {
   color: #2d3748; /* text-gray-800 */
 }
 .module-card h3 {
-  color: #4c51bf; /* text-indigo-700 */
+  color: #0a406c; /* text-indigo-700 */
 }
 
 .app-card h4 {
@@ -373,6 +525,22 @@ body {
 }
 
 /* Objectives Section */
+#objectives {
+  background: linear-gradient(
+    to right,
+    #2bb9e6,
+    #0a406c
+  ); /* hero-bg from original HTML */
+  color: #ffffff;
+  padding: 5rem 0; /* py-20, consistent with hero */
+}
+
+#objectives .section-title,
+#objectives .section-subtitle,
+#objectives .list-disc li {
+  color: #ffffff; /* Ensure text is white on gradient */
+}
+
 .bg-light-indigo {
   background-color: #f0f4ff; /* bg-indigo-50, a lighter shade */
 }
@@ -467,7 +635,7 @@ body {
 
 /* Call to Action Section */
 .bg-indigo-700 {
-  background-color: #4c51bf;
+  background-color: #2bb9e6;
 }
 .text-white {
   color: #ffffff;
@@ -485,8 +653,8 @@ body {
   margin-right: auto;
 }
 .btn-cta {
-  background-color: #ffffff;
-  color: #4c51bf; /* text-indigo-700 */
+  background-color: #0a406c;
+  color: #ffffff; /* text-white */
   font-size: 1.125rem; /* text-lg */
 }
 .btn-cta:hover {
@@ -499,7 +667,7 @@ body {
 
 /* Footer */
 #footer {
-  background-color: #2d3748; /* bg-gray-800 */
+  background-color: #001830; /* bg-gray-800 */
   color: #a0aec0; /* text-gray-300 */
   padding: 2rem 0; /* py-8 */
 }
