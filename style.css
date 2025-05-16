@@ -138,11 +138,12 @@ body {
 .team-members {
   display: flex;
   flex-wrap: nowrap;
+  width: calc(22 * (280px + 1.5rem)); /* 22 cards * (280px width + 1.5rem margin-right) */
   /* The animation will move this element.
      The width of .team-members should be the total width of all cards (original + duplicates).
      This is often set by the content itself (max-content) or JavaScript.
      For pure CSS, ensure the HTML structure has duplicated items. */
-  animation: scrollHorizontal 40s linear infinite;
+  animation: scrollHorizontal 60s linear infinite;
 }
 
 /* Pause animation on hover */
@@ -158,19 +159,20 @@ body {
   100% {
     /* This assumes .team-members contains two identical sets of cards.
        It scrolls one full set of cards. */
-    transform: translateX(-50%);
+    transform: translateX(calc(-11 * (280px + 1.5rem))); /* 11 cards * (280px width + 1.5rem margin-right) */
   }
 }
 
 .team-member-card {
   background-color: #ffffff;
-  padding: 1.5rem;
+  box-sizing: border-box; /* Ensure padding is included in width */
+  padding: 1.5rem; /* Restored original rem value */
   border-radius: 0.5rem; /* rounded-lg */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   flex-shrink: 0; /* Prevent cards from shrinking */
   width: 280px; /* Adjust as needed, or use min-width. Ensures consistency. */
-  margin-right: 1.5rem; /* Spacing between cards */
+  margin-right: 1.5rem; /* Restored original rem value for spacing */
 }
 
 .team-member-img {
@@ -440,15 +442,6 @@ body {
 /* The .team-members styles are now handled by the updated general definition
    for horizontal scrolling. Specific styles for this section's .team-members
    are removed to avoid conflict and duplication. */
-
-.team-member-card {
-  background-color: #ffffff;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  text-align: center;
-}
 
 .team-member-img {
   width: 100px;
