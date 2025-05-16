@@ -1,31 +1,28 @@
-/* General Body Styles */
 body {
   font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f9fa; /* bg-gray-100 */
-  color: #4a5568; /* text-gray-700 */
+  background-color: #f8f9fa;
+  color: #4a5568;
   line-height: 1.6;
 }
 
-/* Container */
 .container {
   width: 90%;
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem; /* px-6 equivalent (0.75rem * 2 for both sides) */
+  padding-left: 1rem;
   padding-right: 1rem;
 }
 
-/* Header & Navigation */
 #header {
-  background-color: #ffffff; /* bg-white */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* shadow-md */
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 50;
-  padding: 1rem 0; /* py-4 */
+  padding: 1rem 0;
 }
 
 #header nav.container {
@@ -35,27 +32,27 @@ body {
 }
 
 .logo {
-  font-size: 1.5rem; /* text-2xl */
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #0a406c; /* text-indigo-600 */
+  color: #0a406c;
   text-decoration: none;
 }
 
 .nav-links a {
-  color: #4a5568; /* text-gray-600 */
+  color: #4a5568;
   text-decoration: none;
-  margin-left: 1rem; /* space-x-4 */
+  margin-left: 1rem;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #0a406c; /* hover:text-indigo-600 */
+  color: #0a406c;
 }
 
 .btn {
-  padding: 0.75rem 1.5rem; /* px-6 py-3 */
-  border-radius: 0.5rem; /* rounded-lg */
-  font-weight: 600; /* font-semibold */
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
   text-decoration: none;
   transition: background-color 0.3s ease, color 0.3s ease;
   display: inline-block;
@@ -63,36 +60,35 @@ body {
 }
 
 .btn-nav {
-  background-color: #0a406c; /* bg-indigo-600 */
+  background-color: #0a406c;
   color: #ffffff !important;
 }
 
 .btn-nav:hover {
-  background-color: #2bb9e6; /* hover:bg-indigo-700 */
+  background-color: #2bb9e6;
 }
 
-/* Mobile Menu */
 .mobile-menu-button {
-  display: none; /* Hidden on larger screens */
+  display: none;
   background: none;
   border: none;
-  color: #4a5568; /* text-gray-700 */
+  color: #4a5568;
   cursor: pointer;
 }
 .mobile-menu-button svg {
-  width: 1.5rem; /* w-6 */
-  height: 1.5rem; /* h-6 */
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .mobile-menu {
   background-color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: absolute;
-  top: 100%; /* Position below the header */
+  top: 100%;
   left: 0;
   right: 0;
   padding: 1rem;
-  border-top: 1px solid #e2e8f0; /* border-gray-200 */
+  border-top: 1px solid #e2e8f0;
 }
 .mobile-menu.hidden {
   display: none;
@@ -102,10 +98,10 @@ body {
   padding: 0.75rem 1rem;
   color: #4a5568;
   text-decoration: none;
-  border-radius: 0.375rem; /* rounded-md */
+  border-radius: 0.375rem;
 }
 .mobile-nav-link:hover {
-  background-color: #f0f4ff; /* A light indigo for hover */
+  background-color: #f0f4ff;
   color: #0a406c;
 }
 .mobile-nav-link-btn {
@@ -113,11 +109,9 @@ body {
   width: 100%;
 }
 
-/* Team Members Section - Updated for Horizontal Scroll */
 .team-members-scroll-container {
   overflow: hidden;
   width: 100%;
-  /* Optional: for fading edges to make the infinite scroll look smoother */
   -webkit-mask-image: linear-gradient(
     to right,
     transparent,
@@ -132,33 +126,25 @@ body {
     black 90%,
     transparent
   );
-  padding-block: 1rem; /* Add some vertical padding to the container */
+  padding-block: 1rem;
 }
 
 .team-members {
   display: flex;
   flex-wrap: nowrap;
-  width: calc(
-    22 * (280px + 1.5rem)
-  ); /* 22 cards * (280px width + 1.5rem margin-right) */
-  /* The animation will move this element.
-     The width of .team-members should be the total width of all cards (original + duplicates).
-     This is often set by the content itself (max-content) or JavaScript.
-     For pure CSS, ensure the HTML structure has duplicated items. */
+  width: calc(22 * (280px + 1.5rem));
   animation: scrollHorizontal 60s linear infinite;
 }
 
-/* Pause animation on hover */
 .team-members:hover {
   animation-play-state: paused;
 }
 
-/* Hero Section Styles */
 .hero-section {
   background: linear-gradient(to right, #0a406c, #1a73e8);
   color: #ffffff;
   padding: 4rem 0;
-  overflow: hidden; /* Ensure image doesn't overflow */
+  overflow: hidden;
 }
 
 .hero-container {
@@ -185,7 +171,6 @@ body {
   box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15);
 }
 
-/* --- RESPONSIVE HERO --- */
 @media (max-width: 900px) {
   .hero-section {
     padding: 3rem 0;
@@ -231,13 +216,13 @@ body {
   }
 }
 .hero-text h1 {
-  font-size: 2.5rem; /* text-4xl */
+  font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .hero-subtitle {
-  font-size: 1.125rem; /* text-lg */
+  font-size: 1.125rem;
   margin-bottom: 2rem;
 }
 
@@ -251,130 +236,100 @@ body {
 .hero-image img {
   max-width: 100%;
   height: auto;
-  border-radius: 0.5rem; /* Optional: add some rounded corners */
+  border-radius: 0.5rem;
 }
 
-/* Keyframes for horizontal scrolling */
 @keyframes scrollHorizontal {
   0% {
-    transform: translateX(0%);
+    transform: translateX(2.5%);
   }
   100% {
-    /* This assumes .team-members contains two identical sets of cards.
-       It scrolls one full set of cards. */
-    transform: translateX(
-      calc(-11 * (280px + 1.5rem))
-    ); /* 11 cards * (280px width + 1.5rem margin-right) */
+    transform: translateX(calc(-11 * (280px + 1.5rem)));
   }
 }
 
 .team-member-card {
   background-color: #ffffff;
-  box-sizing: border-box; /* Ensure padding is included in width */
-  padding: 1.5rem; /* Restored original rem value */
-  border-radius: 0.5rem; /* rounded-lg */
+  box-sizing: border-box;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  flex-shrink: 0; /* Prevent cards from shrinking */
-  width: 280px; /* Adjust as needed, or use min-width. Ensures consistency. */
-  margin-right: 1.5rem; /* Restored original rem value for spacing */
+  flex-shrink: 0;
+  width: 280px;
+  margin-right: 1.5rem;
 }
 
 .team-member-card {
   background-color: #ffffff;
-  box-sizing: border-box; /* Ensure padding is included in width */
-  padding: 1.5rem; /* Restored original rem value */
-  border-radius: 0.5rem; /* rounded-lg */
+  box-sizing: border-box;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  flex-shrink: 0; /* Prevent cards from shrinking */
-  width: 280px; /* Adjust as needed, or use min-width. Ensures consistency. */
-  margin-right: 1.5rem; /* Restored original rem value for spacing */
-  position: relative; /* Needed for absolute positioning of ::after */
-  overflow: hidden; /* Hide the overflowing blur effect */
+  flex-shrink: 0;
+  width: 280px;
+  margin-right: 1.5rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .team-member-img {
-  width: 100px; /* Ajusta según sea necesario */
-  height: 100px; /* Ajusta según sea necesario */
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   margin: 0 auto 1rem;
   object-fit: cover;
-  position: relative; /* Needed for z-index */
-  z-index: 1; /* Ensure image is above the pseudo-element */
-}
-
-.team-member-img::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: inherit; /* Inherit the image */
-  background-size: cover;
-  background-position: center;
-  filter: blur(10px); /* Apply blur effect */
-  z-index: 0; /* Position below the image */
-  border-radius: 50%; /* Match the image border-radius */
-  transform: scale(1.1); /* Slightly larger to cover edges */
+  position: relative;
+  z-index: 1;
 }
 
 .team-member-card h4 {
-  font-size: 1.125rem; /* text-lg */
+  font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
-  color: #2d3748; /* text-gray-800 */
+  color: #2d3748;
 }
 
 .team-member-card p {
-  font-size: 0.875rem; /* text-sm */
-  color: #718096; /* text-gray-600 */
+  font-size: 0.875rem;
+  color: #718096;
 }
 
-/* Responsive adjustments for .team-members (horizontal scroll) can be added here if needed,
-   e.g., changing animation speed or card sizes on different screens.
-   For now, the grid-based responsive styles are removed. */
-
-/* Hero Section */
 .hero-section {
-  background: linear-gradient(
-    to right,
-    #2bb9e6,
-    #0a406c
-  ); /* hero-bg from original HTML */
+  background: linear-gradient(to right, #2bb9e6, #0a406c);
   color: #ffffff;
-  padding: 5rem 0; /* py-20 */
+  padding: 5rem 0;
 }
 
 .hero-section h1 {
-  font-size: 2.5rem; /* text-4xl */
+  font-size: 2.5rem;
   font-weight: bold;
-  margin-bottom: 1.5rem; /* mb-6 */
+  margin-bottom: 1.5rem;
 }
 
 .hero-subtitle {
-  font-size: 1.125rem; /* text-lg */
-  margin-bottom: 2rem; /* mb-8 */
-  max-width: 48rem; /* max-w-3xl */
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  max-width: 48rem;
   margin-left: auto;
   margin-right: auto;
 }
 
 .btn-secondary {
-  background-color: #2bb9e6; /* bg-pink-500 */
+  background-color: #0a406c;
   color: #ffffff;
 }
 
 .btn-secondary:hover {
-  background-color: #d53f8c; /* hover:bg-pink-600 */
+  background-color: white;
+  color: #0a406c;
 }
 
 .btn-large {
-  font-size: 1.125rem; /* text-lg */
+  font-size: 1.125rem;
 }
 
-/* General Section Styling */
 .py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -385,18 +340,18 @@ body {
 }
 
 .section-title {
-  font-size: 2rem; /* text-3xl */
+  font-size: 2rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 2rem; /* mb-8 */
-  color: #2d3748; /* text-gray-800 */
+  margin-bottom: 2rem;
+  color: #2d3748;
 }
 
 .section-subtitle {
   text-align: center;
-  font-size: 1.125rem; /* text-lg */
-  margin-bottom: 3rem; /* mb-12 */
-  max-width: 48rem; /* max-w-3xl */
+  font-size: 1.125rem;
+  margin-bottom: 3rem;
+  max-width: 48rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -405,17 +360,13 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  background-image: linear-gradient(
-    to right,
-    #0a406c,
-    #2bb9e6
-  ); /* from-indigo-500 to-pink-500 */
+  background-image: linear-gradient(to right, #0a406c, #2bb9e6);
 }
 
 /* AI Apps Section Styling */
 #ai-apps {
   background: linear-gradient(to right, #2bb9e6, #0a406c);
-  color: #ffffff; /* Default text color for the section */
+  color: #ffffff;
 }
 
 #ai-apps .section-title,
@@ -424,22 +375,21 @@ body {
 }
 
 #ai-apps .content-placeholder p {
-  color: #f0f4ff; /* A very light, almost white color for better readability */
+  color: #f0f4ff;
 }
 
 /* Grid Layouts */
 .grid-3 {
   display: grid;
-  gap: 2rem; /* gap-8 */
+  gap: 2rem;
 }
 
 .grid-4 {
   display: grid;
-  gap: 2rem; /* gap-8 */
+  gap: 2rem;
 }
 
 @media (min-width: 768px) {
-  /* md breakpoint */
   .grid-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -449,167 +399,152 @@ body {
 }
 
 @media (min-width: 1024px) {
-  /* lg breakpoint */
   .grid-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
-/* Cards (Benefit, Module, App) */
 .benefit-card,
 .module-card,
 .app-card {
-  background-color: #ffffff; /* bg-white */
-  padding: 1.5rem; /* p-6 */
-  border-radius: 0.5rem; /* rounded-lg */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   text-align: center;
 }
 .module-card {
-  background-color: #f8f9fa; /* bg-gray-50 */
+  background-color: #f8f9fa;
 }
 .app-card {
-  border-radius: 0.75rem; /* rounded-xl */
+  border-radius: 0.75rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .benefit-card:hover,
 .module-card:hover,
 .app-card:hover {
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* hover:shadow-lg or hover:shadow-xl */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 .icon-placeholder {
-  width: 3rem; /* w-12 */
-  height: 3rem; /* h-12 */
-  background-color: #e0e7ff; /* bg-indigo-100 */
-  color: #0a406c; /* text-indigo-600 */
-  border-radius: 9999px; /* rounded-full */
+  width: 3rem;
+  height: 3rem;
+  background-color: #e0e7ff;
+  color: #0a406c;
+  border-radius: 9999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem; /* mb-4 */
+  margin-bottom: 1rem;
   margin-left: auto;
   margin-right: auto;
 }
 .icon-placeholder svg {
-  width: 1.5rem; /* w-6 */
-  height: 1.5rem; /* h-6 */
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .benefit-card h3,
 .module-card h3 {
-  font-size: 1.25rem; /* text-xl */
-  font-weight: 600; /* font-semibold */
-  margin-bottom: 0.5rem; /* mb-2 or mb-3 */
-  color: #2d3748; /* text-gray-800 */
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
 }
 .module-card h3 {
-  color: #0a406c; /* text-indigo-700 */
+  color: #0a406c;
 }
 
 .app-card h4 {
-  font-size: 1.125rem; /* text-lg */
-  font-weight: 600; /* font-semibold */
-  margin-bottom: 0.5rem; /* mb-2 */
-  color: #4c51bf; /* text-indigo-700 */
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #4c51bf;
 }
 
 .benefit-card p,
 .module-card p,
 .app-card p {
-  font-size: 0.875rem; /* text-sm */
-  color: #4a5568; /* text-gray-700 */
+  font-size: 0.875rem;
+  color: #4a5568;
 }
 
-/* Objectives Section */
 #objectives {
-  background: linear-gradient(
-    to right,
-    #2bb9e6,
-    #0a406c
-  ); /* hero-bg from original HTML */
+  background: linear-gradient(to right, #2bb9e6, #0a406c);
   color: #ffffff;
-  padding: 5rem 0; /* py-20, consistent with hero */
+  padding: 5rem 0;
 }
 
 #objectives .section-title,
 #objectives .section-subtitle,
 #objectives .list-disc li {
-  color: #ffffff; /* Ensure text is white on gradient */
+  color: #ffffff;
 }
 
 .bg-light-indigo {
-  background-color: #f0f4ff; /* bg-indigo-50, a lighter shade */
+  background-color: #f0f4ff;
 }
 .max-w-prose {
-  max-width: 65ch; /* Tailwind's max-w-prose */
+  max-width: 65ch;
   margin-left: auto;
   margin-right: auto;
 }
 .list-disc {
   list-style-type: disc;
-  padding-left: 1.5rem; /* list-inside and space-y-3 */
+  padding-left: 1.5rem;
 }
 .list-disc li {
-  margin-bottom: 0.75rem; /* space-y-3 */
-  font-size: 1.125rem; /* text-lg */
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
 }
 
-/* AI Applications Section */
 .bg-gray-200 {
   background-color: #e2e8f0;
 }
 
-/* Ethics Section */
 .ethics-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem; /* gap-8 */
+  gap: 2rem;
 }
 .ethics-image img {
-  border-radius: 0.5rem; /* rounded-lg */
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-xl */
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
   height: auto;
   object-fit: cover;
-  max-width: 600px; /* Limit image width */
+  max-width: 600px;
 }
 .ethics-text .text-lg {
-  font-size: 1.125rem; /* text-lg */
-  margin-bottom: 1rem; /* mb-4 */
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
 }
 .ethics-text ul {
-  margin-bottom: 1.5rem; /* mb-6 */
+  margin-bottom: 1.5rem;
 }
 .ethics-text ul li {
-  margin-bottom: 0.5rem; /* space-y-2 */
+  margin-bottom: 0.5rem;
 }
 
 @media (min-width: 768px) {
-  /* md breakpoint */
   .ethics-content {
     flex-direction: row;
   }
   .ethics-image {
-    width: 50%; /* md:w-1/2 */
+    width: 50%;
   }
   .ethics-text {
-    width: 50%; /* md:w-1/2 */
+    width: 50%;
   }
 }
 
-/* Quienes Somos Section */
 .bg-light-gray {
-  background-color: #f7fafc; /* Corresponde a Tailwind gray-100 */
+  background-color: #f7fafc;
 }
-
-/* The .team-members styles are now handled by the updated general definition
-   for horizontal scrolling. Specific styles for this section's .team-members
-   are removed to avoid conflict and duplication. */
 
 .team-member-img {
   width: 100px;
@@ -622,18 +557,17 @@ body {
 }
 
 .team-member-card h4 {
-  font-size: 1.125rem; /* text-lg */
-  font-weight: 600; /* font-semibold */
-  margin-bottom: 0.5rem; /* mb-2 */
-  color: #2d3748; /* gray-800 */
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
 }
 
 .team-member-card p {
-  font-size: 0.875rem; /* text-sm */
-  color: #718096; /* gray-600 */
+  font-size: 0.875rem;
+  color: #718096;
 }
 
-/* Call to Action Section */
 .bg-indigo-700 {
   background-color: #2bb9e6;
 }
@@ -641,39 +575,39 @@ body {
   color: #ffffff;
 }
 .cta-title {
-  font-size: 2rem; /* text-3xl */
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 1.5rem; /* mb-6 */
+  margin-bottom: 1.5rem;
 }
 .cta-subtitle {
-  font-size: 1.125rem; /* text-lg */
-  margin-bottom: 2rem; /* mb-8 */
-  max-width: 42rem; /* max-w-2xl */
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  max-width: 42rem;
   margin-left: auto;
   margin-right: auto;
 }
 .btn-cta {
   background-color: #0a406c;
-  color: #ffffff; /* text-white */
-  font-size: 1.125rem; /* text-lg */
+  color: #ffffff;
+  font-size: 1.125rem;
 }
 .btn-cta:hover {
-  background-color: #edf2f7; /* hover:bg-gray-100 */
+  background-color: #edf2f7;
+  color: black;
 }
 .hackaton-team {
-  margin-top: 1rem; /* mt-4 */
-  font-size: 0.875rem; /* text-sm */
+  margin-top: 1rem;
+  font-size: 0.875rem;
 }
 
-/* Footer */
 #footer {
-  background-color: #001830; /* bg-gray-800 */
-  color: #a0aec0; /* text-gray-300 */
-  padding: 2rem 0; /* py-8 */
+  background-color: #001830;
+  color: #a0aec0;
+  padding: 2rem 0;
 }
 .footer-tagline {
-  font-size: 0.875rem; /* text-sm */
-  margin-top: 0.5rem; /* mt-2 */
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
 }
 
 /* Text Alignment */
@@ -681,31 +615,30 @@ body {
   text-align: center;
 }
 
-/* Responsive Adjustments for Navigation */
 @media (max-width: 768px) {
   .nav-links {
-    display: none; /* Hide desktop links */
+    display: none;
   }
   .mobile-menu-button {
-    display: block; /* Show hamburger icon */
+    display: block;
   }
   .hero-section h1 {
-    font-size: 2rem; /* md:text-6xl -> smaller on mobile */
+    font-size: 2rem;
   }
   .hero-subtitle {
-    font-size: 1rem; /* md:text-xl */
+    font-size: 1rem;
   }
   .section-title {
-    font-size: 1.75rem; /* md:text-4xl */
+    font-size: 1.75rem;
   }
   .cta-title {
-    font-size: 1.75rem; /* md:text-4xl */
+    font-size: 1.75rem;
   }
   .cta-subtitle {
-    font-size: 1rem; /* md:text-xl */
+    font-size: 1rem;
   }
   .grid-3,
   .grid-4 {
-    grid-template-columns: 1fr; /* Stack cards on mobile */
+    grid-template-columns: 1fr;
   }
 }
